@@ -4,7 +4,8 @@
     "target_event_date": "2026-08-03",
     "verbatim_claim": "Let’s take a look at 3rd Aug spike at 9:15 am EET... the imbalance price of 600 Eur/MWh were entirely set by mFRR activations.",
     "claim_type": "DIRECT_NUMERICAL",
-    "assigned_datasets": [319],
+    "primary_dataset": 319,
+    "corroborating_datasets": [],
     "preregistered_status": "TESTABLE",
     "eval_branches": ["1.1", "1.2", "1.3", "1.4"]
   },
@@ -12,9 +13,15 @@
     "claim_id": "FI-02",
     "target_event_date": "2026-08-03",
     "verbatim_claim": "Out of the 469 MW of mFRR needed, 424 MW was locally activated while the rest came in from SE1 and SE3.",
-    "claim_type": "DIRECT_NUMERICAL_AND_DIRECTIONAL",
-    "assigned_datasets": [369, 377, 375, 378, 379, 381, 385, 390, 349, 354],
-    "preregistered_status": "TESTABLE",
+    "claim_type": "ACCOUNTING_RECONCILIATION",
+    "primary_dataset_need": 377,
+    "primary_dataset_local": 375,
+    "primary_dataset_se1": 378,
+    "primary_dataset_se3": 379,
+    "corroborating_datasets": [369, 381, 385, 390, 349],
+    "verification_equation": "DS_375 + |DS_378| + |DS_379| == DS_377",
+    "preregistered_status": "DEFERRED",
+    "rationale_for_deferred": "Multi-series balancing accounting (net flow vs gross activation) must be evaluated without assuming single-series equivalence",
     "eval_branches": ["1.1", "1.2", "1.3", "1.4"]
   },
   {
@@ -22,7 +29,8 @@
     "target_event_date": "2026-08-05",
     "verbatim_claim": "A similar story occurred on 5th Aug morning at 8:30 EET when the imbalance price spiked to 718 Eur/MWh.",
     "claim_type": "DIRECT_NUMERICAL",
-    "assigned_datasets": [319],
+    "primary_dataset": 319,
+    "corroborating_datasets": [],
     "preregistered_status": "TESTABLE",
     "eval_branches": ["2.1", "2.2", "2.3", "2.4"]
   },
@@ -31,8 +39,12 @@
     "target_event_date": "2026-08-05",
     "verbatim_claim": "However, in this case, aFRR activations upward were non-zero which played a role in determining the VWAP which set the imbalance price... There was no mFRR imports from Sweden in this case.",
     "claim_type": "DIRECTIONAL_AND_VOLUME",
-    "assigned_datasets": [349, 354, 378, 379, 381],
-    "preregistered_status": "TESTABLE",
+    "primary_dataset_afrr_up": 349,
+    "primary_dataset_se1": 378,
+    "primary_dataset_se3": 379,
+    "corroborating_datasets": [354, 381],
+    "preregistered_status": "DEFERRED",
+    "rationale_for_deferred": "Cross-border balancing import verification requires exact sign reconciliation on DS 378/379",
     "eval_branches": ["2.1", "2.2", "2.3", "2.4"]
   },
   {
@@ -40,17 +52,19 @@
     "target_event_date": "2026-08-05",
     "verbatim_claim": "The wind forecast error of more than 300 MW compared to the intraday forecast on 5th Aug was partly responsible for these activations",
     "claim_type": "DELTA_NUMERICAL",
-    "assigned_datasets": [75, 245],
+    "primary_actual_dataset": 75,
+    "primary_forecast_dataset": 245,
     "preregistered_status": "TESTABLE",
     "eval_branches": ["2.1", "2.2", "2.3", "2.4"],
-    "scope_limit": "Tests forecast delta >= 300 MW; causal attribution ('partly responsible') is non-computational"
+    "scope_limit": "Tests forecast delta >= 300 MW under primary (T-15m) and alternative (T-60m) vintages; causal attribution ('partly responsible') is non-computational"
   },
   {
     "claim_id": "FI-06",
     "target_event_date": "2026-08-03_and_2026-08-05",
     "verbatim_claim": "In the attached images, one can observe how BESS discharges spiked around these times of imbalance price spikes.",
     "claim_type": "AGGREGATE_DISCHARGE_SPIKE",
-    "assigned_datasets": [398, 399],
+    "primary_dataset": 398,
+    "corroborating_datasets": [399],
     "preregistered_status": "TESTABLE",
     "eval_rule": "Peak discharge in event window [T-30m, T+30m] >= baseline_median (2h) + 20 MW AND >= 1.5x baseline_median",
     "scope_limit": "Tests aggregate Finnish grid BESS discharge; does NOT test asset-level intent or price causation"
