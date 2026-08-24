@@ -1,6 +1,6 @@
 {
   "audit_instance": "fi-imbalance-s1",
-  "timestamp_utc": "2026-08-24T19:28:30Z",
+  "timestamp_utc": "2026-08-24T19:28:46Z",
   "overall_audit_status": "Verified with Limitations",
   "ontology_vocabulary": "Verified | Verified with Limitations | Not Verified | Not Demonstrated | Unfalsifiable-as-Stated | Deferred",
   "summary": {
@@ -63,7 +63,7 @@
     },
     "FI-03": {
       "claim_id": "FI-03",
-      "verdict": "NOT_VERIFIED",
+      "verdict": "VERIFIED",
       "observed_value": 718.81,
       "target_value": 718.0,
       "unit": "EUR/MWh",

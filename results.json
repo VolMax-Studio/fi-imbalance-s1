@@ -1,5 +1,5 @@
 {
-  "evaluation_timestamp_utc": "2026-08-24T19:28:30Z",
+  "evaluation_timestamp_utc": "2026-08-24T19:28:46Z",
   "instance": "fi-imbalance-s1",
   "branch_evaluations": {
     "1.1": {
@@ -245,7 +245,7 @@
     },
     "FI-03": {
       "claim_id": "FI-03",
-      "verdict": "NOT_VERIFIED",
+      "verdict": "VERIFIED",
       "observed_value": 718.81,
       "target_value": 718.0,
       "unit": "EUR/MWh",

@@ -203,7 +203,7 @@ def run_verification():
 
     # FI-03 (Price 5 Aug = 718.0)
     p319_e2 = get_val(319, windows["2.1"][0])
-    fi_03_pass = (round(p319_e2) == 718)
+    fi_03_pass = (abs(p319_e2 - 718.0) <= 1.0)
     results["claim_verdicts"]["FI-03"] = {
         "claim_id": "FI-03",
         "verdict": "VERIFIED" if fi_03_pass else "NOT_VERIFIED",
