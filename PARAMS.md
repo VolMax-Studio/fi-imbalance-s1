@@ -62,17 +62,27 @@ All datasets are pinned to the single canonical portal `https://data.fingrid.fi`
 | **`403`** | `Transmission of electricity between Finland and Central Sweden...` | 15 min | `MWh` | **NOT_SUBSTITUTABLE_FOR: FI-02, FI-04** (Physical schedule flow $\neq$ balancing flow) |
 | **`404`** | `Transmission of electricity between Finland and Northern Sweden...` | 15 min | `MWh` | **NOT_SUBSTITUTABLE_FOR: FI-02, FI-04** (Physical schedule flow $\neq$ balancing flow) |
 
+### Dataset 369 Semantic Caveats
+- **Temporal Unit Notice:** The textual description for Dataset 369 refers to dominating direction "for each hour", whereas the publication cadence is 15 minutes. The 15-minute resolution governs.
+- **Direction Value Zero Notice:** `0` encodes both "no mFRR activation occurred" and "equal upward and downward activations occurred". Both conditions satisfy Fingrid's rule for Day-Ahead fallback.
+
 ---
 
-## 3. Imbalance Pricing Tree on Zero-aFRR Activation (2026-08-03 Event)
+## 3. Mathematical Formalization of Pricing Rules
 
-Under Fingrid's 1 June 2026 pricing rule:
+### 3.1 Event 1 (2026-08-03): Zero-aFRR Branching
 Total satisfied aFRR upward demand is defined as:
 $$V_{\text{aFRR, up}} = \text{DS\_349} + \text{DS\_354}$$
 
 When $D = 1$ and $V_{\text{aFRR, up}} = 0$:
 - **Price Branch A (Priyanka Interpretation):** $\text{Price}_A = P_{\text{mFRR, SA/DA}}$
 - **Price Branch B (Literal Textual Rule):** $\text{Price}_B = \max(P_{\text{mFRR, marginal}}, P_{\text{aFRR, VWAP}})$
+
+### 3.2 Event 2 (2026-08-05): Non-Zero aFRR Upward Activation
+When $D = 1$ and $V_{\text{aFRR, up}} > 0$:
+- **Theoretical Volume-Weighted Price:**
+  $$\text{Price} = \frac{V_{\text{mFRR, up}} \cdot P_{\text{mFRR}} + V_{\text{aFRR, up}} \cdot P_{\text{aFRR, VWAP}}}{V_{\text{mFRR, up}} + V_{\text{aFRR, up}}}$$
+- **Operationalization Notice:** Evaluated as an approximation against published Dataset 319 due to Dataset 375 publishing maximum MW power of the quarter hour rather than MWh energy volume.
 
 ---
 
@@ -84,10 +94,11 @@ When $D = 1$ and $V_{\text{aFRR, up}} = 0$:
 
 ---
 
-## 5. Wind Forecast Error Operationalization (FI-05)
+## 5. Wind Forecast Error Operationalization & Lower-Bound Bias (FI-05)
 
 - **Target Forecast Horizon:** The 15-minute interval corresponding to Event 2.
-- **Forecast Ingestion:** Dataset 245 publishes a single consolidated rolling series per target interval without explicit vintage timestamps.
+- **Forecast Ingestion:** Dataset 245 publishes a single consolidated rolling series per target interval without explicit issuance/vintage timestamps.
+- **Lower-Bound Bias Declaration:** Because later forecast vintages closer to real-time are monotonically more accurate than earlier vintages, the forecast error measured from the consolidated Dataset 245 constitutes a strict lower bound on the error relative to any pre-gate-closure vintage.
 - **Unit Equivalence:** $1\text{ MWh/h} \equiv 1\text{ MW}$ average power over a 15-minute interval.
 - **Error Formula:** $\text{Forecast Error (MW)} = |\text{Forecast (DS 245)} - \text{Actual (DS 75)}|$.
 - **Evaluation Criterion:** $\text{Forecast Error} \ge 300.0\text{ MW}$.
@@ -105,7 +116,14 @@ When $D = 1$ and $V_{\text{aFRR, up}} = 0$:
 
 ---
 
-## 7. Discrepancy Tolerances
+## 7. Instrument Dissonance Pre-Registration (FI-02 Series)
+
+- **Identified Dissonance:** Dataset 377 is Fingrid's estimated need (MW), Dataset 375 is maximum power of the quarter hour (MW), and Datasets 378/379 are boundary flows (MW).
+- **Interpretation Rule:** Because these three metrics measure distinct physical phenomena, exact algebraic closure ($\text{DS\_375} + |\text{DS\_378}| + |\text{DS\_379}| = \text{DS\_377}$) is not mathematically guaranteed across heterogeneous instruments. A failure of exact closure constitutes an instrument reconciliation finding, not a falsification of the author's narrative.
+
+---
+
+## 8. Discrepancy Tolerances
 
 - **Price Matching:** Evaluated against precision present in Fingrid API response; published precision recorded in manifest.
 - **Power Matching:** Evaluated against precision present in Fingrid API response ($\pm 1.0\text{ MW}$).

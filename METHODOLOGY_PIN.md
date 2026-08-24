@@ -9,7 +9,7 @@
 
 ---
 
-## 1. Exact Verbatim Text from Fingrid Release (Programmatically Extracted)
+## 1. Exact Verbatim Text from Fingrid Release
 
 ```text
 Imbalance pricing for balance responsible parties will be changed to volume-weighted 1 June 2026.
@@ -45,4 +45,4 @@ Let:
 
 ## 3. Amendment Ledger
 
-- **Amendment #1 (2026-08-24):** Replaced manual paraphrased draft with programmatically extracted verbatim text from Fingrid news announcement.
+- **Amendment #1 (2026-08-24):** Replaced draft text with exact verbatim wording transcribed from the official Fingrid news release (URL: `https://www.fingrid.fi/en/news/news/2026/change-in-determining-the-imbalance-price-for-balance-responsible-parties-in-june-2026/`) and verified character-identical against source on 2026-08-24.

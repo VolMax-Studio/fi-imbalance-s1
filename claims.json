@@ -50,10 +50,12 @@
     "claim_id": "FI-02c",
     "target_event_date": "2026-08-03",
     "verbatim_claim": "while the rest came in from SE1 and SE3",
-    "claim_type": "DIRECTIONAL_IMPORT",
+    "claim_type": "DIRECTIONAL_AND_QUANTITY_IMPORT",
     "primary_dataset_se1": 378,
     "primary_dataset_se3": 379,
-    "test_condition": "DS_378 < 0 AND DS_379 < 0 (negative indicates cross-border import into FI)",
+    "directional_condition": "DS_378 < 0 AND DS_379 < 0 (negative indicates cross-border import into FI)",
+    "quantity_condition": "abs(DS_378) + abs(DS_379) >= 40.0 AND abs(DS_378) + abs(DS_379) <= 50.0",
+    "instrument_caveat": "Exact closure with DS_377 - DS_375 is subject to instrument dissonance pre-registered in PARAMS.md Section 7",
     "preregistered_status": "TESTABLE",
     "eval_branches": [
       "1.1",
@@ -124,7 +126,7 @@
       "2.3",
       "2.4"
     ],
-    "scope_limit": "Tests forecast error magnitude >= 300 MW under single consolidated series in DS 245; causal attribution ('partly responsible') is non-computational"
+    "scope_limit": "Measured error from consolidated DS 245 constitutes a strict lower bound on earlier vintage forecast error; causal attribution ('partly responsible') is non-computational"
   },
   {
     "claim_id": "FI-06",
