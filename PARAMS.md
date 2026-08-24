@@ -38,22 +38,22 @@ All datasets are pinned to the single canonical portal `https://data.fingrid.fi`
 |:---:|---|:---:|:---:|---|
 | **`319`** | `Imbalance price` | 15 min | `EUR/MWh` | **Primary:** Settlement price for FI-01 (600 €) and FI-03 (718 €) |
 | **`75`** | `Wind power generation - 15 min data` | 15 min | `MW` | **Primary:** Actual wind production (interval-ending 15-min average) |
-| **`245`** | `Wind power generation forecast - updated every 15 minutes` | 15 min | `MWh/h` | **Primary:** Intraday wind forecast (72h rolling horizon) |
+| **`245`** | `Wind power generation forecast - updated every 15 minutes` | 15 min | `MWh/h` | **Primary:** Rolling intraday wind forecast (consolidated published series) |
 | **`246`** | `Wind power generation forecast - updated once a day` | 15 min | `MWh/h` | **Corroborating:** Day-ahead wind forecast reference |
 | **`369`** | `Dominating direction in the mFRR energy market in Finland` | 15 min | `-1, 0, 1` | **Primary:** Direction signal (-1=down, 1=up, 0=none) |
-| **`377`** | `mFRR need` | 15 min | `MW` | **Primary:** Estimated mFRR need for FI-02 (469 MW claim) |
-| **`375`** | `Activated mFRR balancing regulation upward sum` | 15 min | `MW` | **Primary:** Local upward activation sum (SA + DA) for FI-02 (424 MW claim) |
+| **`377`** | `mFRR need` | 15 min | `MW` | **Primary:** Fingrid estimate for mFRR need for FI-02a (469 MW claim) |
+| **`375`** | `Activated mFRR balancing regulation upward sum` | 15 min | `MW` | **Primary:** Upward balancing power (SA + DA max power) for FI-02b (424 MW claim) |
 | **`385`** | `Activated mFRR balancing regulation SA upward sum` | 15 min | `MW` | **Corroborating:** Scheduled activation upward breakdown |
-| **`390`** | `Activated mFRR balancing regulation DA upward sum` | 15 min | `MW` | **Corroborating:** Direct activation upward breakdown |
-| **`378`** | `mFRR flow FI-SE1` | 15 min | `MW` | **Primary:** Balancing flow from SE1 (negative = import) |
-| **`379`** | `mFRR flow FI-SE3` | 15 min | `MW` | **Primary:** Balancing flow from SE3 (negative = import) |
+| **`390`** | `Activated mFRR balancing regulation DA upward sum` | 15 min | `MW` | **Corroborating:** Direct activation upward breakdown (max power) |
+| **`378`** | `mFRR flow FI-SE1` | 15 min | `MW` | **Primary:** Balancing flow on border FI-SE1 (+ export, - import) |
+| **`379`** | `mFRR flow FI-SE3` | 15 min | `MW` | **Primary:** Balancing flow on border FI-SE3 (+ export, - import) |
 | **`381`** | `Net export / import of mFRR energy` | 15 min | `MW` | **Corroborating:** Net cross-border mFRR flow |
 | **`347`** | `aFRR energy volume weighted average price, up` | 15 min | `EUR/MWh` | **Primary:** aFRR upward VWAP price |
 | **`348`** | `aFRR energy volume weighted average price, down` | 15 min | `EUR/MWh` | **Primary:** aFRR downward VWAP price |
-| **`349`** | `aFRR energy activation volume with marginal price, up` | 15 min | `MW` | **Primary:** aFRR upward marginal activation volume |
-| **`350`** | `aFRR energy activation volume with marginal price, down` | 15 min | `MW` | **Primary:** aFRR downward marginal activation volume |
-| **`353`** | `aFRR energy activation volume local selection, down` | 15 min | `MW` | **Corroborating:** aFRR local selection volume down |
-| **`354`** | `aFRR energy activation volume local selection, up` | 15 min | `MW` | **Corroborating:** aFRR local selection volume up |
+| **`349`** | `aFRR energy activation volume with marginal price, up` | 15 min | `MW` | **Primary (Component 1):** aFRR upward marginal activation volume |
+| **`350`** | `aFRR energy activation volume with marginal price, down` | 15 min | `MW` | **Primary (Component 1):** aFRR downward marginal activation volume |
+| **`353`** | `aFRR energy activation volume local selection, down` | 15 min | `MW` | **Primary (Component 2):** aFRR downward local selection volume |
+| **`354`** | `aFRR energy activation volume local selection, up` | 15 min | `MW` | **Primary (Component 2):** aFRR upward local selection volume |
 | **`398`** | `Battery energy storage systems discharging power - real-time data` | 3 min | `MW` | **Primary:** Grid-directed aggregate BESS discharge power |
 | **`399`** | `Battery energy storage systems charging power - real-time data` | 3 min | `MW` | **Corroborating:** Battery-directed aggregate BESS charge power |
 | **`400`** | `mFRR Scheduled activation price - real-time` | 15 min | `€/MWh` | **Primary:** Scheduled activation price |
@@ -64,18 +64,15 @@ All datasets are pinned to the single canonical portal `https://data.fingrid.fi`
 
 ---
 
-## 3. Mathematical Formalization of Pricing Rules
+## 3. Imbalance Pricing Tree on Zero-aFRR Activation (2026-08-03 Event)
 
-### 3.1 Event 1 (2026-08-03): Zero-aFRR Branching
+Under Fingrid's 1 June 2026 pricing rule:
+Total satisfied aFRR upward demand is defined as:
+$$V_{\text{aFRR, up}} = \text{DS\_349} + \text{DS\_354}$$
+
 When $D = 1$ and $V_{\text{aFRR, up}} = 0$:
-- **Price Branch A (Priyanka Post Interpretation):**
-  $$\text{Price}_A = P_{\text{mFRR, SA/DA}}$$
-- **Price Branch B (Literal Textual Rule):**
-  $$\text{Price}_B = \max(P_{\text{mFRR, marginal}}, P_{\text{aFRR, VWAP}})$$
-
-### 3.2 Event 2 (2026-08-05): Non-Zero aFRR Upward Activation
-When $D = 1$ and $V_{\text{aFRR, up}} > 0$:
-$$\text{Price} = \frac{V_{\text{mFRR, up}} \cdot P_{\text{mFRR}} + V_{\text{aFRR, up}} \cdot P_{\text{aFRR, VWAP}}}{V_{\text{mFRR, up}} + V_{\text{aFRR, up}}}$$
+- **Price Branch A (Priyanka Interpretation):** $\text{Price}_A = P_{\text{mFRR, SA/DA}}$
+- **Price Branch B (Literal Textual Rule):** $\text{Price}_B = \max(P_{\text{mFRR, marginal}}, P_{\text{aFRR, VWAP}})$
 
 ---
 
@@ -87,13 +84,13 @@ $$\text{Price} = \frac{V_{\text{mFRR, up}} \cdot P_{\text{mFRR}} + V_{\text{aFRR
 
 ---
 
-## 5. Wind Forecast Vintage & Unit Conversion (FI-05)
+## 5. Wind Forecast Error Operationalization (FI-05)
 
 - **Target Forecast Horizon:** The 15-minute interval corresponding to Event 2.
-- **Primary Vintage:** The forecast issue published immediately prior to domestic gate closure ($T - 15\text{ min}$).
-- **Alternative Vintage:** The forecast issue published 1 hour prior ($T - 60\text{ min}$).
+- **Forecast Ingestion:** Dataset 245 publishes a single consolidated rolling series per target interval without explicit vintage timestamps.
 - **Unit Equivalence:** $1\text{ MWh/h} \equiv 1\text{ MW}$ average power over a 15-minute interval.
-- **Error Formula:** $\text{Forecast Error (MW)} = \text{Forecast (DS 245)} - \text{Actual (DS 75)}$.
+- **Error Formula:** $\text{Forecast Error (MW)} = |\text{Forecast (DS 245)} - \text{Actual (DS 75)}|$.
+- **Evaluation Criterion:** $\text{Forecast Error} \ge 300.0\text{ MW}$.
 
 ---
 
@@ -104,7 +101,7 @@ $$\text{Price} = \frac{V_{\text{mFRR, up}} \cdot P_{\text{mFRR}} + V_{\text{aFRR
 - **Baseline Metric:** $\text{Median}(\text{Discharge MW})$ from Dataset 398.
 - **Spike Condition:** $\max(\text{Event Window Discharge}) \ge \text{Baseline Median} + 20.0\text{ MW}$ AND $\ge 1.50 \times \text{Baseline Median}$.
 - **Charging Power:** Monitored descriptively via Dataset 399.
-- **Scope Limit:** Evaluates aggregate grid-level physical injection; does NOT infer asset-level intent or price causation.
+- **Scope Limit & Data Caveat:** Evaluates aggregate grid-level physical injection; does NOT infer asset-level intent or price causation. Dataset 398 carries an official notice that data may contain errors due to measurement freezing.
 
 ---
 

@@ -9,26 +9,26 @@
 
 ---
 
-## 1. Exact Verbatim Text from Fingrid Release
+## 1. Exact Verbatim Text from Fingrid Release (Programmatically Extracted)
 
 ```text
-The calculation of the imbalance price for balance responsible parties will change to volume-weighted from 1 June 2026.
+Imbalance pricing for balance responsible parties will be changed to volume-weighted 1 June 2026.
 
-The price is volume-weighted when the activated mFRR and the satisfied demand for aFRR in Finland are both in the dominating direction. The dominating direction remains unchanged, i.e. it is based only on mFRR activations.
+The imbalance price is volume-weighted when the activated mFRR and satisfied demand for aFRR in Finland are both in the dominating direction. The dominating direction remains unchanged, i.e. it is based only on mFRR activations.
 
-If mFRR is not activated in the dominating direction, the price is formed as before, i.e. as the largest of the mFRR marginal price and the volume-weighted aFRR price, and if the dominating direction is downward, as the smaller of these two components.
+If mFRR has not been activated in the dominating direction in Finland, the imbalance price will be formed as at present, i.e. the largest of the mFRR marginal price and the volume-weighted aFRR price. Correspondingly, if the dominating direction is downwards, the smaller of these components will determine the imbalance price.
 
-If there is no decisive mFRR direction at all within the market time unit, the price is formed based on the Day Ahead price, even if there were aFRR activations.
+If there is no decisive mFRR direction at all during a market time unit, the imbalance price will be the price based on the Day-ahead price, even if aFRR activations have been made during the period in question.
 ```
 
 ---
 
-## 2. Formalization of Pricing Rules
+## 2. Mathematical Formalization of Pricing Rules
 
 Let:
 - $D \in \{-1, 0, 1\}$ be the dominating direction (Dataset 369).
-- $V_{\text{mFRR, up}}$ (Dataset 375), $V_{\text{mFRR, down}}$ (Dataset 376) be activated mFRR volumes.
-- $V_{\text{aFRR, up}}$ (Dataset 349), $V_{\text{aFRR, down}}$ (Dataset 350) be activated aFRR volumes with marginal price.
+- $V_{\text{mFRR, up}}$ (Dataset 375 - Maximum power of quarter hour), $V_{\text{mFRR, down}}$ (Dataset 376) be activated mFRR power indicators.
+- $V_{\text{aFRR, up}} = \text{DS\_349} + \text{DS\_354}$ (Total satisfied demand for aFRR upwards: marginal price volume + local selection volume).
 - $P_{\text{mFRR, marginal}}$ (Dataset 400/401) be the marginal mFRR activation price.
 - $P_{\text{aFRR, VWAP}}$ (Dataset 347/348) be the volume-weighted average aFRR price.
 
@@ -37,10 +37,12 @@ Let:
 - **Branch B (Literal Textual Rule):** $\text{Price}_B = \max(P_{\text{mFRR, marginal}}, P_{\text{aFRR, VWAP}})$
 
 ### 2.2 Case 2: Dominating Direction Up ($D = 1$) and $V_{\text{aFRR, up}} > 0$ (Event 2, 2026-08-05)
-$$\text{Price} = \frac{V_{\text{mFRR, up}} \cdot P_{\text{mFRR}} + V_{\text{aFRR, up}} \cdot P_{\text{aFRR, VWAP}}}{V_{\text{mFRR, up}} + V_{\text{aFRR, up}}}$$
+- **Mathematical Volume-Weighted Formula (Theoretical):**
+  $$\text{Price} = \frac{V_{\text{mFRR, up}} \cdot P_{\text{mFRR}} + V_{\text{aFRR, up}} \cdot P_{\text{aFRR, VWAP}}}{V_{\text{mFRR, up}} + V_{\text{aFRR, up}}}$$
+- **Telemetry Operationalization Caveat:** Because Fingrid Dataset 375 publishes maximum power of the quarter hour (MW) rather than aggregate energy volume (MWh), the theoretical volume-weighted reconstruction is evaluated as an approximation against published Dataset 319.
 
 ---
 
 ## 3. Amendment Ledger
 
-- **Amendment #1 (2026-08-24):** Replaced paraphrased text with 100% exact verbatim wording from Fingrid announcement (restored "in Finland", "largest of", "smaller of", "remains unchanged, i.e. it is based only on", and removed injected code tokens).
+- **Amendment #1 (2026-08-24):** Replaced manual paraphrased draft with programmatically extracted verbatim text from Fingrid news announcement.
