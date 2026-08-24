@@ -1,0 +1,8 @@
+# Raw Telemetry Data Escrow - STRICTLY EXCLUDED FROM VERSION CONTROL
+data/
+*.feather
+*.parquet
+*.csv.gz
+__pycache__/
+*.pyc
+.env
