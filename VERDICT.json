@@ -1,0 +1,104 @@
+{
+  "audit_instance": "fi-imbalance-s1",
+  "timestamp_utc": "2026-08-24T19:23:43Z",
+  "overall_audit_status": "COMPLETED_EMPIRICALLY_VERIFIED",
+  "summary": {
+    "total_subclaims": 10,
+    "confirmed_count": 8,
+    "confirmed_subject_to_instrument_dissonance_count": 1,
+    "unfalsifiable_count": 1,
+    "discrepant_count": 0
+  },
+  "claims": {
+    "FI-01": {
+      "claim_id": "FI-01",
+      "verdict": "CONFIRMED",
+      "observed_value": 600.0,
+      "target_value": 600.0,
+      "unit": "EUR/MWh",
+      "primary_branch": "1.1",
+      "reproduced_mfrr_price": 600.0,
+      "pricing_rule_branch_a": 600.0,
+      "pricing_rule_branch_b": 600.0
+    },
+    "FI-02a": {
+      "claim_id": "FI-02a",
+      "verdict": "CONFIRMED",
+      "observed_value": 469.0,
+      "target_value": 469.0,
+      "unit": "MW",
+      "instrument_type": "Fingrid estimate"
+    },
+    "FI-02b": {
+      "claim_id": "FI-02b",
+      "verdict": "CONFIRMED",
+      "observed_value": 424.0,
+      "target_value": 424.0,
+      "unit": "MW",
+      "instrument_type": "Quarter-hour peak power (SA+DA)"
+    },
+    "FI-02c": {
+      "claim_id": "FI-02c",
+      "verdict": "CONFIRMED_SUBJECT_TO_INSTRUMENT_DISSONANCE",
+      "flow_se1_mw": -6.4,
+      "flow_se3_mw": -40.4,
+      "total_import_mw": 46.8,
+      "residual_need_mw": 45.0,
+      "delta_mw": 1.8,
+      "falsification_boundary_mw": 10.0,
+      "directional_import_confirmed": true
+    },
+    "FI-03": {
+      "claim_id": "FI-03",
+      "verdict": "CONFIRMED",
+      "observed_value": 718.81,
+      "target_value": 718.0,
+      "unit": "EUR/MWh",
+      "primary_branch": "2.1"
+    },
+    "FI-04a": {
+      "claim_id": "FI-04a",
+      "verdict": "CONFIRMED",
+      "afrr_marginal_up_mw": 24.22664,
+      "afrr_local_up_mw": 1.79722,
+      "total_satisfied_afrr_up_mw": 26.0239,
+      "non_zero_confirmed": true
+    },
+    "FI-04b": {
+      "claim_id": "FI-04b",
+      "verdict": "CONFIRMED",
+      "flow_se1_mw": 0.0,
+      "flow_se3_mw": 0.0,
+      "zero_import_confirmed": true
+    },
+    "FI-05": {
+      "claim_id": "FI-05",
+      "verdict": "CONFIRMED",
+      "actual_wind_mw": 473.6,
+      "forecast_wind_mw": 794.0,
+      "error_delta_mw": 320.4,
+      "threshold_mw": 300.0,
+      "bias_nature": "strict_lower_bound_against_earlier_vintages"
+    },
+    "FI-06": {
+      "claim_id": "FI-06",
+      "verdict": "CONFIRMED",
+      "event_1_3aug": {
+        "baseline_median_mw": 117.1,
+        "event_peak_mw": 232.55,
+        "spike_condition_met": true
+      },
+      "event_2_5aug": {
+        "baseline_median_mw": 47.07,
+        "event_peak_mw": 243.96,
+        "spike_condition_met": true
+      },
+      "overall_spike_confirmed": true
+    },
+    "FI-07": {
+      "claim_id": "FI-07",
+      "verdict": "UNFALSIFIABLE-AS-STATED",
+      "rationale": "Private proprietary forecast model outputs are unrecorded in public transmission telemetry"
+    }
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "evaluation_timestamp_utc": "2026-08-24T19:23:43Z",
+  "instance": "fi-imbalance-s1",
+  "branch_evaluations": {
+    "1.1": {
+      "branch_id": "1.1",
+      "description": "EEST Beginning (Primary Physical)",
+      "interval_start_utc": "2026-08-03 06:15:00+00:00",
+      "interval_end_utc": "2026-08-03 06:30:00+00:00",
+      "telemetry": {
+        "imbalance_price_319": 600.0,
+        "mfrr_need_377": 469.0,
+        "mfrr_upward_sum_375": 424.0,
+        "mfrr_flow_se1_378": -6.4,
+        "mfrr_flow_se3_379": -40.4,
+        "dominating_direction_369": 1.0,
+        "afrr_marginal_up_349": 0.0,
+        "afrr_local_up_354": 0.0,
+        "mfrr_scheduled_price_400": 600.0,
+        "wind_actual_75": 825.74,
+        "wind_forecast_245": 871.4
+      }
+    },
+    "1.2": {
+      "branch_id": "1.2",
+      "description": "EEST Ending (Alternative Physical)",
+      "interval_start_utc": "2026-08-03 06:00:00+00:00",
+      "interval_end_utc": "2026-08-03 06:15:00+00:00",
+      "telemetry": {
+        "imbalance_price_319": 399.51,
+        "mfrr_need_377": 509.0,
+        "mfrr_upward_sum_375": 400.0,
+        "mfrr_flow_se1_378": -78.9,
+        "mfrr_flow_se3_379": -34.4,
+        "dominating_direction_369": 1.0,
+        "afrr_marginal_up_349": 0.54222,
+        "afrr_local_up_354": 0.0,
+        "mfrr_scheduled_price_400": 400.0,
+        "wind_actual_75": 731.38,
+        "wind_forecast_245": 859.5
+      }
+    },
+    "1.3": {
+      "branch_id": "1.3",
+      "description": "EET Beginning (Author Mental Reference)",
+      "interval_start_utc": "2026-08-03 07:15:00+00:00",
+      "interval_end_utc": "2026-08-03 07:30:00+00:00",
+      "telemetry": {
+        "imbalance_price_319": 5.75,
+        "mfrr_need_377": -494.0,
+        "mfrr_upward_sum_375": 9.0,
+        "mfrr_flow_se1_378": 238.6,
+        "mfrr_flow_se3_379": 237.4,
+        "dominating_direction_369": -1.0,
+        "afrr_marginal_up_349": 0.0,
+        "afrr_local_up_354": 0.0,
+        "mfrr_scheduled_price_400": 24.0,
+        "wind_actual_75": 1426.08,
+        "wind_forecast_245": 1101.6
+      }
+    },
+    "1.4": {
+      "branch_id": "1.4",
+      "description": "EET Ending (Author Mental Reference)",
+      "interval_start_utc": "2026-08-03 07:00:00+00:00",
+      "interval_end_utc": "2026-08-03 07:15:00+00:00",
+      "telemetry": {
+        "imbalance_price_319": 4.38,
+        "mfrr_need_377": -187.0,
+        "mfrr_upward_sum_375": 15.0,
+        "mfrr_flow_se1_378": 200.0,
+        "mfrr_flow_se3_379": 0.0,
+        "dominating_direction_369": -1.0,
+        "afrr_marginal_up_349": 31.67108,
+        "afrr_local_up_354": 4.53713,
+        "mfrr_scheduled_price_400": 2.69,
+        "wind_actual_75": 1199.46,
+        "wind_forecast_245": 1045.7
+      }
+    },
+    "2.1": {
+      "branch_id": "2.1",
+      "description": "EEST Beginning (Primary Physical)",
+      "interval_start_utc": "2026-08-05 05:30:00+00:00",
+      "interval_end_utc": "2026-08-05 05:45:00+00:00",
+      "telemetry": {
+        "imbalance_price_319": 718.81,
+        "mfrr_need_377": 343.0,
+        "mfrr_upward_sum_375": 521.0,
+        "mfrr_flow_se1_378": 0.0,
+        "mfrr_flow_se3_379": 0.0,
+        "dominating_direction_369": 1.0,
+        "afrr_marginal_up_349": 24.22664,
+        "afrr_local_up_354": 1.79722,
+        "mfrr_scheduled_price_400": 750.0,
+        "wind_actual_75": 473.6,
+        "wind_forecast_245": 794.0
+      }
+    },
+    "2.2": {
+      "branch_id": "2.2",
+      "description": "EEST Ending (Alternative Physical)",
+      "interval_start_utc": "2026-08-05 05:15:00+00:00",
+      "interval_end_utc": "2026-08-05 05:30:00+00:00",
+      "telemetry": {
+        "imbalance_price_319": 59.65,
+        "mfrr_need_377": -59.0,
+        "mfrr_upward_sum_375": 111.0,
+        "mfrr_flow_se1_378": 0.0,
+        "mfrr_flow_se3_379": 0.0,
+        "dominating_direction_369": 1.0,
+        "afrr_marginal_up_349": 67.96882,
+        "afrr_local_up_354": 0.12052,
+        "mfrr_scheduled_price_400": 16.0,
+        "wind_actual_75": 509.08,
+        "wind_forecast_245": 794.4
+      }
+    },
+    "2.3": {
+      "branch_id": "2.3",
+      "description": "EET Beginning (Author Mental Reference)",
+      "interval_start_utc": "2026-08-05 06:30:00+00:00",
+      "interval_end_utc": "2026-08-05 06:45:00+00:00",
+      "telemetry": {
+        "imbalance_price_319": 62.29,
+        "mfrr_need_377": 32.0,
+        "mfrr_upward_sum_375": 57.0,
+        "mfrr_flow_se1_378": 13.4,
+        "mfrr_flow_se3_379": 11.6,
+        "dominating_direction_369": 1.0,
+        "afrr_marginal_up_349": 44.43107,
+        "afrr_local_up_354": 0.59291,
+        "mfrr_scheduled_price_400": 65.4,
+        "wind_actual_75": 656.48,
+        "wind_forecast_245": 698.9
+      }
+    },
+    "2.4": {
+      "branch_id": "2.4",
+      "description": "EET Ending (Author Mental Reference)",
+      "interval_start_utc": "2026-08-05 06:15:00+00:00",
+      "interval_end_utc": "2026-08-05 06:30:00+00:00",
+      "telemetry": {
+        "imbalance_price_319": 24.37,
+        "mfrr_need_377": 83.0,
+        "mfrr_upward_sum_375": 24.0,
+        "mfrr_flow_se1_378": 0.0,
+        "mfrr_flow_se3_379": -62.0,
+        "dominating_direction_369": -1.0,
+        "afrr_marginal_up_349": 17.63109,
+        "afrr_local_up_354": 2.2137,
+        "mfrr_scheduled_price_400": 36.43,
+        "wind_actual_75": 552.23,
+        "wind_forecast_245": 657.9
+      }
+    }
+  },
+  "claim_verdicts": {
+    "FI-01": {
+      "claim_id": "FI-01",
+      "verdict": "CONFIRMED",
+      "observed_value": 600.0,
+      "target_value": 600.0,
+      "unit": "EUR/MWh",
+      "primary_branch": "1.1",
+      "reproduced_mfrr_price": 600.0,
+      "pricing_rule_branch_a": 600.0,
+      "pricing_rule_branch_b": 600.0
+    },
+    "FI-02a": {
+      "claim_id": "FI-02a",
+      "verdict": "CONFIRMED",
+      "observed_value": 469.0,
+      "target_value": 469.0,
+      "unit": "MW",
+      "instrument_type": "Fingrid estimate"
+    },
+    "FI-02b": {
+      "claim_id": "FI-02b",
+      "verdict": "CONFIRMED",
+      "observed_value": 424.0,
+      "target_value": 424.0,
+      "unit": "MW",
+      "instrument_type": "Quarter-hour peak power (SA+DA)"
+    },
+    "FI-02c": {
+      "claim_id": "FI-02c",
+      "verdict": "CONFIRMED_SUBJECT_TO_INSTRUMENT_DISSONANCE",
+      "flow_se1_mw": -6.4,
+      "flow_se3_mw": -40.4,
+      "total_import_mw": 46.8,
+      "residual_need_mw": 45.0,
+      "delta_mw": 1.8,
+      "falsification_boundary_mw": 10.0,
+      "directional_import_confirmed": true
+    },
+    "FI-03": {
+      "claim_id": "FI-03",
+      "verdict": "CONFIRMED",
+      "observed_value": 718.81,
+      "target_value": 718.0,
+      "unit": "EUR/MWh",
+      "primary_branch": "2.1"
+    },
+    "FI-04a": {
+      "claim_id": "FI-04a",
+      "verdict": "CONFIRMED",
+      "afrr_marginal_up_mw": 24.22664,
+      "afrr_local_up_mw": 1.79722,
+      "total_satisfied_afrr_up_mw": 26.0239,
+      "non_zero_confirmed": true
+    },
+    "FI-04b": {
+      "claim_id": "FI-04b",
+      "verdict": "CONFIRMED",
+      "flow_se1_mw": 0.0,
+      "flow_se3_mw": 0.0,
+      "zero_import_confirmed": true
+    },
+    "FI-05": {
+      "claim_id": "FI-05",
+      "verdict": "CONFIRMED",
+      "actual_wind_mw": 473.6,
+      "forecast_wind_mw": 794.0,
+      "error_delta_mw": 320.4,
+      "threshold_mw": 300.0,
+      "bias_nature": "strict_lower_bound_against_earlier_vintages"
+    },
+    "FI-06": {
+      "claim_id": "FI-06",
+      "verdict": "CONFIRMED",
+      "event_1_3aug": {
+        "baseline_median_mw": 117.1,
+        "event_peak_mw": 232.55,
+        "spike_condition_met": true
+      },
+      "event_2_5aug": {
+        "baseline_median_mw": 47.07,
+        "event_peak_mw": 243.96,
+        "spike_condition_met": true
+      },
+      "overall_spike_confirmed": true
+    },
+    "FI-07": {
+      "claim_id": "FI-07",
+      "verdict": "UNFALSIFIABLE-AS-STATED",
+      "rationale": "Private proprietary forecast model outputs are unrecorded in public transmission telemetry"
+    }
+  }
+}

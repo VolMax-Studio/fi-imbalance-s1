@@ -1,0 +1,269 @@
+{
+  "manifest_version": "1.0.0",
+  "instance": "fi-imbalance-s1",
+  "target_start_utc": "2026-08-02T00:00:00.000Z",
+  "target_end_utc": "2026-08-06T00:00:00.000Z",
+  "portal": "https://data.fingrid.fi",
+  "datasets": [
+    {
+      "dataset_id": 319,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "a882c8a8632c98f1a7f33970f5c6f7ae4b12c721d9955d80ceb4bc4e2ae8e426",
+      "raw_file": "data/raw_ds_319.json",
+      "retrieved_at_utc": "2026-08-24T19:21:24Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 75,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "9588dcd96336832076333f767c0f09b3248b7d997d79fa88988b214e5269cb30",
+      "raw_file": "data/raw_ds_75.json",
+      "retrieved_at_utc": "2026-08-24T19:21:29Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 245,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "ae1e63a5f2d4cbfc43e1aa17c114f91961e2af99f305bd2621a8b9ecd8f01004",
+      "raw_file": "data/raw_ds_245.json",
+      "retrieved_at_utc": "2026-08-24T19:21:33Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 246,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "ebb9515ea5f0bdf1280e97cf889f1d9add2105006be522052ba69307d4319145",
+      "raw_file": "data/raw_ds_246.json",
+      "retrieved_at_utc": "2026-08-24T19:21:36Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 369,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "cb4672334c74612889ccaf658d7c3f0444af9dee1563a5fb438ef665e7f11b32",
+      "raw_file": "data/raw_ds_369.json",
+      "retrieved_at_utc": "2026-08-24T19:21:40Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 375,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "af9c38ebc5357a1b39567aa0779ef60e6f4939c5a005592ea80e2ef70837efe6",
+      "raw_file": "data/raw_ds_375.json",
+      "retrieved_at_utc": "2026-08-24T19:21:44Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 376,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "f4dcf8476893d0143e2db3f81c25aabf3d83e480b1f276df2fe7d2bd0047d388",
+      "raw_file": "data/raw_ds_376.json",
+      "retrieved_at_utc": "2026-08-24T19:21:47Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 377,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "bc2d087f3c7bbe03f805db3b5054837e17dad5206bcf78935e3cc3a662295172",
+      "raw_file": "data/raw_ds_377.json",
+      "retrieved_at_utc": "2026-08-24T19:21:51Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 378,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "ab3ab8de6dd67b1c292a138acf6e7fb1d32506d44e41ef56f58a71c8ce61be6a",
+      "raw_file": "data/raw_ds_378.json",
+      "retrieved_at_utc": "2026-08-24T19:21:54Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 379,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "bc7b7a451f2de7b5d9114c64a2e28bc35b898495908c3af5b8e4867237c79fd3",
+      "raw_file": "data/raw_ds_379.json",
+      "retrieved_at_utc": "2026-08-24T19:21:58Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 381,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "1a68f748ceb83e1aa8a9d58f7063216b2d3148e484d7585942a2713aa6270015",
+      "raw_file": "data/raw_ds_381.json",
+      "retrieved_at_utc": "2026-08-24T19:22:05Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 385,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "da34b494c2f4ced1ee84b1bfbdd5e285fcdc6b82f2f8bf71576bc749aa23e6bc",
+      "raw_file": "data/raw_ds_385.json",
+      "retrieved_at_utc": "2026-08-24T19:22:09Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 390,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "a7223f8a98827293f2b9ba1b5a38bfe6e2db4b6ef03fa73750088f98194b7731",
+      "raw_file": "data/raw_ds_390.json",
+      "retrieved_at_utc": "2026-08-24T19:22:13Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 347,
+      "status_code": 200,
+      "record_count": 262,
+      "sha256": "f01642a71875cc05f96685dc43d9aed6ebc28c9de67b1a2f5b6e52ad84833030",
+      "raw_file": "data/raw_ds_347.json",
+      "retrieved_at_utc": "2026-08-24T19:22:17Z",
+      "min_start_time_utc": "2026-08-02T00:15:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 348,
+      "status_code": 200,
+      "record_count": 267,
+      "sha256": "824c9061b5df9f95be2f68c22d6d3acd89a3846b0c29a20ccc41cadd1bacb836",
+      "raw_file": "data/raw_ds_348.json",
+      "retrieved_at_utc": "2026-08-24T19:22:21Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 349,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "d237f3c067fa4a6660876c67865fc6078df37ce3a8285363147238ae3ad22b25",
+      "raw_file": "data/raw_ds_349.json",
+      "retrieved_at_utc": "2026-08-24T19:22:24Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 350,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "462a9e9091be144e7829bc406b3a54b18a88877d0c1c49225f3a797636e00188",
+      "raw_file": "data/raw_ds_350.json",
+      "retrieved_at_utc": "2026-08-24T19:22:30Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 353,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "93fab08d9c7a160c21b16564a196e8aa8d55468e7a1d44ec3b0dac524a15adb9",
+      "raw_file": "data/raw_ds_353.json",
+      "retrieved_at_utc": "2026-08-24T19:22:33Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 354,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "1e23d953bbc92f74545d71c5d1f71ba7fad1530227e433d80e831c960fe37be9",
+      "raw_file": "data/raw_ds_354.json",
+      "retrieved_at_utc": "2026-08-24T19:22:37Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 398,
+      "status_code": 200,
+      "record_count": 1918,
+      "sha256": "e38fcc1c59a8a4cef0d8c199e19f08339869900c7e48a0d40cbeb7b59abbf2d8",
+      "raw_file": "data/raw_ds_398.json",
+      "retrieved_at_utc": "2026-08-24T19:22:41Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 399,
+      "status_code": 200,
+      "record_count": 1918,
+      "sha256": "1b8475624faa3e4f579ad7bc29ceef7e92166b70e1745d2906405b0b0d30364d",
+      "raw_file": "data/raw_ds_399.json",
+      "retrieved_at_utc": "2026-08-24T19:22:45Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 400,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "4cfa78313e6c482d0f1186cf9aa3eccdd75ca8fc14b7adfc47e1a9846ac41f2e",
+      "raw_file": "data/raw_ds_400.json",
+      "retrieved_at_utc": "2026-08-24T19:22:49Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 401,
+      "status_code": 200,
+      "record_count": 10,
+      "sha256": "6a34c7e2d8ff54da4505707d4b4b5306d8e43789f85b7ba098e97013265b0c1a",
+      "raw_file": "data/raw_ds_401.json",
+      "retrieved_at_utc": "2026-08-24T19:22:53Z",
+      "min_start_time_utc": "2026-08-04T03:30:00.000Z",
+      "max_end_time_utc": "2026-08-05T17:00:00.000Z"
+    },
+    {
+      "dataset_id": 402,
+      "status_code": 200,
+      "record_count": 6,
+      "sha256": "a23a5e92932be6a0a71e5e311cf3224d77d80b714276f12c5411e329e83e31ab",
+      "raw_file": "data/raw_ds_402.json",
+      "retrieved_at_utc": "2026-08-24T19:22:57Z",
+      "min_start_time_utc": "2026-08-02T07:45:00.000Z",
+      "max_end_time_utc": "2026-08-04T15:30:00.000Z"
+    },
+    {
+      "dataset_id": 403,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "43cb55e1fa89ee2b908ecbfeb87ee3e4d7821246ec850c610dfc5334e8b4f851",
+      "raw_file": "data/raw_ds_403.json",
+      "retrieved_at_utc": "2026-08-24T19:23:00Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "dataset_id": 404,
+      "status_code": 200,
+      "record_count": 384,
+      "sha256": "50e566428f598dc62bdc30c0bde0365e4aeefcda272335a9e4140b11fa4c4324",
+      "raw_file": "data/raw_ds_404.json",
+      "retrieved_at_utc": "2026-08-24T19:23:04Z",
+      "min_start_time_utc": "2026-08-02T00:00:00.000Z",
+      "max_end_time_utc": "2026-08-06T00:00:00.000Z"
+    }
+  ]
+}
