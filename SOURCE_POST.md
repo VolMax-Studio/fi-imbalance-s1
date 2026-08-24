@@ -5,6 +5,7 @@
 > **Activity / Post ID:** `7491063244456050688`  
 > **Date of Publication:** August 2026 (~2 weeks prior to 2026-08-24)  
 > **Access Date (UTC):** 2026-08-24  
+> **Formatting Note:** Paragraph breaks and unicode styling (bold characters) have been normalized to standard ASCII text.  
 > **Scope Caveat:** Three accompanying image artifacts referenced in the post ("In the attached images, one can observe...") are unacquired. Verification evaluates textual statements against primary Fingrid open telemetry.
 
 ---
