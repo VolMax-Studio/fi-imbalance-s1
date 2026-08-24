@@ -5,6 +5,7 @@
 > **Target Event Dates:** 2026-08-03 and 2026-08-05  
 > **Canonical Portal:** `https://data.fingrid.fi`  
 > **Date of Pre-Registration (UTC):** 2026-08-24  
+> **Static Source Post Hash (SHA-256):** `6f3c55102eaa3664b3d13d86e0e326343f3530b19b83748dafaad266d7cc1e73`  
 
 ---
 
@@ -94,11 +95,11 @@ When $D = 1$ and $V_{\text{aFRR, up}} > 0$:
 
 ---
 
-## 5. Wind Forecast Error Operationalization & Lower-Bound Bias (FI-05)
+## 5. Wind Forecast Error Operationalization & Source Bias Declaration (FI-05)
 
 - **Target Forecast Horizon:** The 15-minute interval corresponding to Event 2.
-- **Forecast Ingestion:** Dataset 245 publishes a single consolidated rolling series per target interval without explicit issuance/vintage timestamps.
-- **Lower-Bound Bias Declaration:** Because later forecast vintages closer to real-time are monotonically more accurate than earlier vintages, the forecast error measured from the consolidated Dataset 245 constitutes a strict lower bound on the error relative to any pre-gate-closure vintage.
+- **Forecast Ingestion:** Dataset 245 retains only the latest recorded forecast issue per target interval without explicit issuance timestamps.
+- **Source Bias Boundary:** Because Dataset 245 does not expose issuance timestamps, its relation to any earlier pre-gate-closure vintage cannot be formally determined from this source alone. The verdict on FI-05 applies strictly to the latest recorded forecast issue retained in Fingrid Open Data.
 - **Unit Equivalence:** $1\text{ MWh/h} \equiv 1\text{ MW}$ average power over a 15-minute interval.
 - **Error Formula:** $\text{Forecast Error (MW)} = |\text{Forecast (DS 245)} - \text{Actual (DS 75)}|$.
 - **Evaluation Criterion:** $\text{Forecast Error} \ge 300.0\text{ MW}$.
@@ -116,14 +117,17 @@ When $D = 1$ and $V_{\text{aFRR, up}} > 0$:
 
 ---
 
-## 7. Instrument Dissonance Pre-Registration (FI-02 Series)
+## 7. Instrument Dissonance & Quantitative Falsification Boundary (FI-02c)
 
-- **Identified Dissonance:** Dataset 377 is Fingrid's estimated need (MW), Dataset 375 is maximum power of the quarter hour (MW), and Datasets 378/379 are boundary flows (MW).
-- **Interpretation Rule:** Because these three metrics measure distinct physical phenomena, exact algebraic closure ($\text{DS\_375} + |\text{DS\_378}| + |\text{DS\_379}| = \text{DS\_377}$) is not mathematically guaranteed across heterogeneous instruments. A failure of exact closure constitutes an instrument reconciliation finding, not a falsification of the author's narrative.
+- **Metrics:** Let $\Delta_{\text{import}} = |\text{DS\_378}| + |\text{DS\_379}|$ and $\Delta_{\text{residual}} = \text{DS\_377} - \text{DS\_375}$.
+- **Residual Delta:** $\delta = |\Delta_{\text{import}} - \Delta_{\text{residual}}|$.
+- **Quantitative Decision Boundary:**
+  - If $\delta \le 10.0\text{ MW} \implies$ `CONFIRMED_SUBJECT_TO_INSTRUMENT_DISSONANCE` (discrepancy attributable to maximum-power vs average-flow metric definitions).
+  - If $\delta > 10.0\text{ MW} \implies$ `DISCREPANT` (falsification boundary reached; cross-border flows fail to explain residual need).
 
 ---
 
 ## 8. Discrepancy Tolerances
 
-- **Price Matching:** Evaluated against precision present in Fingrid API response; published precision recorded in manifest.
-- **Power Matching:** Evaluated against precision present in Fingrid API response ($\pm 1.0\text{ MW}$).
+- **Price Matching:** $\pm 0.01\text{ EUR/MWh}$ (or exact matching to published decimal precision).
+- **Power Matching:** $\pm 1.0\text{ MW}$ for integer telemetry series (DS 75, 375, 377, 378, 379, 398); $\pm 0.1\text{ MW}$ for fractional forecast telemetry (DS 245).
