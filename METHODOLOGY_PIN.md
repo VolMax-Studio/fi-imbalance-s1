@@ -37,7 +37,7 @@ Let:
 - **Branch B (Literal Textual Rule):** $\text{Price}_B = \max(P_{\text{mFRR, marginal}}, P_{\text{aFRR, VWAP}})$
 
 ### 2.2 Case 2: Dominating Direction Up ($D = 1$) and $V_{\text{aFRR, up}} > 0$ (Event 2, 2026-08-05)
-- **Mathematical Volume-Weighted Formula (Theoretical):**
+- **Theoretical Volume-Weighted Price:**
   $$\text{Price} = \frac{V_{\text{mFRR, up}} \cdot P_{\text{mFRR}} + V_{\text{aFRR, up}} \cdot P_{\text{aFRR, VWAP}}}{V_{\text{mFRR, up}} + V_{\text{aFRR, up}}}$$
 - **Telemetry Operationalization Caveat:** Because Fingrid Dataset 375 publishes maximum power of the quarter hour (MW) rather than aggregate energy volume (MWh), the theoretical volume-weighted reconstruction is evaluated as an approximation against published Dataset 319.
 
@@ -45,4 +45,4 @@ Let:
 
 ## 3. Amendment Ledger
 
-- **Amendment #1 (2026-08-24):** Replaced draft text with exact verbatim wording transcribed from the official Fingrid news release (URL: `https://www.fingrid.fi/en/news/news/2026/change-in-determining-the-imbalance-price-for-balance-responsible-parties-in-june-2026/`) and verified character-identical against source on 2026-08-24.
+- **Amendment #1 (2026-08-24):** Replaced draft text with exact verbatim wording transcribed from the official Fingrid news release (URL: `https://www.fingrid.fi/en/news/news/2026/change-in-determining-the-imbalance-price-for-balance-responsible-parties-in-june-2026/`) and verified character-identical against source by gate review on 2026-08-24.
