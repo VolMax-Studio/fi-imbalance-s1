@@ -1,0 +1,27 @@
+{
+  "baseline_commit": "48004249920e97a314af7d0b0784fdac7bfbdb63",
+  "baseline_tree": "043976f21f4a0ed621566d8ce58912eac79f9564",
+  "behavior": {
+    "callbacks": false,
+    "executable": false,
+    "network_calls": false,
+    "telemetry": false
+  },
+  "canonical_url": "https://github.com/VolMax-Studio/fi-imbalance-s1",
+  "default_branch_at_recording": "main",
+  "license": {
+    "detected_spdx": "NOASSERTION",
+    "files": [
+      "LICENSE_L0.md"
+    ],
+    "note": "This provenance record does not grant or alter license rights."
+  },
+  "owner": "VolMax-Studio",
+  "record_id": "urn:volmax:github:VolMax-Studio/fi-imbalance-s1:48004249920e97a314af7d0b0784fdac7bfbdb63",
+  "record_type": "volmax.repository-provenance",
+  "record_version": 1,
+  "recorded_at": "2026-10-08T19:34:20+00:00",
+  "repository": "VolMax-Studio/fi-imbalance-s1",
+  "schema": "urn:volmax:provenance:v1",
+  "scope": "Repository identity and baseline commit only; historical tags, releases, evidence, authorship, and existing file bytes are unchanged."
+}
